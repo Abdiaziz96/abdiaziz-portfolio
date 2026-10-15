@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -51,6 +51,7 @@
   .mono{display:flex;height:130px;width:130px;align-items:center;justify-content:center;border-radius:50%;
     background:linear-gradient(135deg,var(--dark),var(--steel));color:#fff;font-size:34px;font-weight:600;
     animation:scaleIn .8s cubic-bezier(.4,0,.2,1) both}
+  .mono-img{object-fit:cover;object-position:50% 30%;display:block;border:0}
   .role{margin-top:28px;max-width:660px;width:100%;text-align:center;font-size:13px;font-weight:300;letter-spacing:.34em;
     text-transform:uppercase;color:#6b7280;animation:fadeUp .6s .35s cubic-bezier(.4,0,.2,1) both}
   .cursor{animation:blink .8s infinite;color:var(--steel);font-weight:300}
@@ -155,7 +156,7 @@
     <div class="ring-ping"></div>
     <div class="ring-inner"></div>
     <div class="centre">
-      <div class="mono">AA</div>
+      <img class="mono mono-img" src="portrait.jpg" alt="Abdirahman Abdiaziz" width="130" height="130">
       <div class="role"><span id="tw">Data &amp; Insights Analyst</span><span class="cursor">|</span></div>
       <div class="bar"></div>
       <nav class="hero-nav">
