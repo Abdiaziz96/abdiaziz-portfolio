@@ -1,0 +1,377 @@
+﻿<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdirahman Abdiaziz â€” Data &amp; Insights Analyst</title>
+<meta name="description" content="Data and insight analyst. SQL, Tableau and operational performance reporting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<style>
+  :root{
+    --steel:#4682B4; --steel-deep:#3a6e97; --steel-wash:#eaf1f7;
+    --bg:#fafafa; --dark:#0B111E; --dark-card:#111A2E; --ring:#93c5fd;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:#000;font-family:"Poppins",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  header{position:absolute;top:0;z-index:50;width:100%;max-width:1280px;left:50%;transform:translateX(-50%);
+    display:flex;align-items:flex-start;justify-content:space-between;padding:20px}
+  .socials{display:flex;gap:16px}
+  .icon-btn{display:flex;height:32px;width:32px;align-items:center;justify-content:center;border-radius:6px;
+    background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.16);transition:background .3s cubic-bezier(.4,0,.2,1)}
+  .icon-btn svg{height:16px;width:16px;fill:#4b5563;transition:fill .3s}
+  .icon-btn:hover{background:var(--steel)}
+  .icon-btn:hover svg{fill:#fff}
+  .top-right{display:flex;align-items:center;gap:22px}
+  .contact-link{display:flex;align-items:center;gap:7px;font-size:12.5px;letter-spacing:.2em;color:#9ca3af;
+    transition:color .3s cubic-bezier(.4,0,.2,1)}
+  .contact-link:hover{color:var(--steel)}
+
+  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    position:relative;padding:90px 20px 60px}
+  .ghost{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%) rotate(-22deg);font-size:104px;
+    font-weight:600;color:var(--steel);opacity:.022;white-space:nowrap;pointer-events:none;user-select:none}
+  .orbit{position:relative;display:flex;align-items:center;justify-content:center;height:560px;width:560px}
+  .ring-outer{position:absolute;height:650px;width:650px;border-radius:50%;border:1px solid rgba(147,197,253,.5);
+    animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}
+  .ring-ping{position:absolute;height:200px;width:200px;border-radius:50%;border:1px solid rgba(147,197,253,.45);
+    animation:ping 1s cubic-bezier(0,0,.2,1) infinite}
+  .ring-inner{position:absolute;height:370px;width:370px;border-radius:50%;border:1px solid rgba(147,197,253,.4)}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+  @keyframes ping{75%,100%{transform:scale(2);opacity:0}}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes scaleIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+
+  .centre{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center}
+  .mono{display:flex;height:130px;width:130px;align-items:center;justify-content:center;border-radius:50%;
+    background:linear-gradient(135deg,var(--dark),var(--steel));color:#fff;font-size:34px;font-weight:600;
+    animation:scaleIn .8s cubic-bezier(.4,0,.2,1) both}
+  .role{margin-top:28px;max-width:660px;width:100%;text-align:center;font-size:13px;font-weight:300;letter-spacing:.34em;
+    text-transform:uppercase;color:#6b7280;animation:fadeUp .6s .35s cubic-bezier(.4,0,.2,1) both}
+  .cursor{animation:blink .8s infinite;color:var(--steel);font-weight:300}
+  .bar{margin-top:36px;height:74px;width:4px;background:var(--steel);animation:fadeUp .6s .5s cubic-bezier(.4,0,.2,1) both}
+  .hero-nav{margin-top:32px;display:flex;gap:56px;animation:fadeUp .6s .65s cubic-bezier(.4,0,.2,1) both}
+  .hero-nav a{font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#6b7280;
+    transition:color .15s cubic-bezier(.4,0,.2,1)}
+  .hero-nav a:hover{color:var(--steel)}
+
+  .home-btn{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);height:40px;width:40px;border-radius:50%;
+    background:var(--steel);display:flex;align-items:center;justify-content:center;z-index:60;
+    box-shadow:0 4px 14px rgba(70,130,180,.45);transition:background .3s cubic-bezier(.4,0,.2,1)}
+  .home-btn:hover{background:var(--steel-deep)}
+  .home-btn svg{height:17px;width:17px;fill:#fff}
+
+  section{max-width:1080px;margin:0 auto;padding:92px 24px;border-top:1px solid #e5e7eb}
+  h2{font-size:13px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--steel);margin-bottom:32px}
+  .body p{max-width:76ch;font-size:15.5px;font-weight:300;line-height:1.85;color:#374151;margin-bottom:16px}
+  .body p strong{font-weight:500;color:#000}
+
+  .skillgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+  .skill{background:#fff;border-radius:12px;padding:16px 14px;font-size:13px;font-weight:400;text-align:center;
+    box-shadow:0 1px 3px rgba(0,0,0,.07);transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+  .skill:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(70,130,180,.18)}
+
+  .grid{display:grid;gap:22px}
+  @media(min-width:840px){.grid{grid-template-columns:1fr 1fr}}
+  .card{background:#fff;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;
+    box-shadow:0 1px 4px rgba(0,0,0,.07);transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(70,130,180,.18)}
+  .card .bar-top{height:5px;background:var(--steel);opacity:.85}
+  .card .inner{padding:26px 24px;display:flex;flex-direction:column;flex:1}
+  .card h3{font-size:18px;font-weight:600;letter-spacing:-.015em;margin-bottom:10px;line-height:1.3}
+  .card p{font-size:13.5px;font-weight:300;line-height:1.72;color:#4b5563;margin-bottom:12px}
+  .card .proves{margin-top:auto;border-top:1px solid #f0f0f0;padding-top:14px;font-size:12.5px;color:#6b7280;line-height:1.6}
+  .card .proves b{color:var(--steel);font-weight:500}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .tag{font-size:10.5px;font-weight:400;background:var(--steel-wash);color:#46617a;border-radius:9999px;padding:4px 11px}
+  .repo-link{margin-top:16px;font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+
+  .dl{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:720px){.dl{grid-template-columns:1fr 1fr}}
+  .dl a{display:flex;align-items:center;gap:14px;background:#fff;border-radius:16px;padding:22px 24px;
+    box-shadow:0 1px 4px rgba(0,0,0,.07);transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+  .dl a:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(70,130,180,.2)}
+  .dl .ico{display:flex;height:40px;width:40px;flex-shrink:0;align-items:center;justify-content:center;
+    border-radius:10px;background:var(--steel-wash)}
+  .dl .ico svg{height:19px;width:19px;fill:var(--steel)}
+  .dl b{display:block;font-size:14.5px;font-weight:600}
+  .dl span.sub{display:block;font-size:12px;font-weight:300;color:#6b7280;margin-top:2px}
+
+  footer{background:var(--dark);color:#fff;padding:76px 24px 96px;text-align:center}
+  footer h2{color:var(--steel)}
+  footer p{font-size:15px;font-weight:300;line-height:1.8;color:#c8d0da;max-width:62ch;margin:0 auto 30px}
+  .fbtns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .fbtn{display:inline-flex;align-items:center;gap:9px;border-radius:100px;padding:13px 26px;font-size:13.5px;
+    font-weight:500;border:1.5px solid rgba(255,255,255,.25);transition:all .3s cubic-bezier(.4,0,.2,1)}
+  .fbtn:hover{background:var(--steel);border-color:var(--steel)}
+  .fbtn.solid{background:var(--steel);border-color:var(--steel)}
+  .fbtn.solid:hover{background:var(--steel-deep);border-color:var(--steel-deep)}
+  .copy{font-size:11.5px;letter-spacing:.08em;color:#5f6b7d;margin-top:52px}
+
+  @media(max-width:640px){
+    .orbit{height:400px;width:400px}
+    .ring-outer{height:400px;width:400px}
+    .ring-ping{height:130px;width:130px}
+    .ring-inner{height:240px;width:240px}
+    .role{max-width:320px;font-size:10px;letter-spacing:.2em}
+    .hero-nav{gap:24px}
+    .hero-nav a{font-size:10.5px;letter-spacing:.2em}
+    .ghost{font-size:62px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
+</style>
+</head>
+<body>
+
+<span class="ghost" aria-hidden="true">ABDIRAHMAN ABDIAZIZ</span>
+
+<header>
+  <div class="socials">
+    <a class="icon-btn" href="https://github.com/Abdiaziz96" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+    <a class="icon-btn" href="mailto:abdiaziz141024@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24"><path d="M1.5 4.5h21c.4 0 .8.2 1 .6.2.4.1.9-.2 1.2l-10.5 7.9c-.4.3-1 .3-1.4 0L.7 6.3c-.3-.3-.4-.8-.2-1.2.2-.4.6-.6 1-.6zM22.5 19.5h-21c-.8 0-1.5-.7-1.5-1.5V7.5l9.6 7.2c.8.6 1.9.6 2.8 0l9.6-7.2V18c0 .8-.7 1.5-1.5 1.5z"/></svg>
+    </a>
+  </div>
+  <div class="top-right">
+    <a class="contact-link" href="#contact">
+      <svg viewBox="0 0 24 24" style="height:16px;width:16px;fill:currentColor"><path d="M1.5 4.5h21c.4 0 .8.2 1 .6.2.4.1.9-.2 1.2l-10.5 7.9c-.4.3-1 .3-1.4 0L.7 6.3c-.3-.3-.4-.8-.2-1.2.2-.4.6-.6 1-.6zM22.5 19.5h-21c-.8 0-1.5-.7-1.5-1.5V7.5l9.6 7.2c.8.6 1.9.6 2.8 0l9.6-7.2V18c0 .8-.7 1.5-1.5 1.5z"/></svg>
+      CONTACT
+    </a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="orbit">
+    <div class="ring-outer"></div>
+    <div class="ring-ping"></div>
+    <div class="ring-inner"></div>
+    <div class="centre">
+      <div class="mono">AA</div>
+      <div class="role"><span id="tw">Data &amp; Insights Analyst</span><span class="cursor">|</span></div>
+      <div class="bar"></div>
+      <nav class="hero-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#cv">CV</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<a class="home-btn" href="#top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 3.2 2.4 11.4a1 1 0 0 0 .65 1.76H5v7.14a1.5 1.5 0 0 0 1.5 1.5h3.75v-5.25h3.5v5.25h3.75A1.5 1.5 0 0 0 19 20.3v-7.14h1.95a1 1 0 0 0 .65-1.76z"/></svg>
+</a>
+
+<section id="about" class="body">
+  <h2>About</h2>
+  <p>
+    Data and insight analyst with <strong>two years and eight months of continuous commercial experience</strong>,
+    from September 2020 to May 2023. BI analysis at Confused.com, data management at CeRID in Nairobi, and
+    independent consulting through Tech&amp;City, the company I co-founded.
+  </p>
+  <p>
+    I work in transport operations now, so I have spent the last two years on the side of the data where it
+    actually gets produced. Depots, handheld devices, tachograph records, load sheets. That is useful when the
+    question is why the numbers look the way they do, because I have been the person whose week changes
+    depending on what a report says.
+  </p>
+  <p>
+    What I am good at is the join between the two. Taking a messy question from someone operational, working out
+    what they are actually trying to decide, then getting them a number that answers it rather than a table that
+    describes it.
+  </p>
+  <p>
+    I build with AI assistance as a deliberate working method, and I can explain every query and design decision
+    in anything on this page.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skillgrid">
+    <div class="skill">SQL</div>
+    <div class="skill">Microsoft SQL Server</div>
+    <div class="skill">T-SQL</div>
+    <div class="skill">Tableau</div>
+    <div class="skill">Dashboard design</div>
+    <div class="skill">KPI reporting</div>
+    <div class="skill">Ad hoc analysis</div>
+    <div class="skill">Excel</div>
+    <div class="skill">Google Sheets</div>
+    <div class="skill">Operational analysis</div>
+    <div class="skill">Root cause analysis</div>
+    <div class="skill">Stakeholder management</div>
+    <div class="skill">Requirements gathering</div>
+    <div class="skill">Data validation</div>
+    <div class="skill">SSIS</div>
+    <div class="skill">Microsoft Azure</div>
+    <div class="skill">Python</div>
+    <div class="skill">Power BI (PL-300)</div>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Work</h2>
+  <div class="grid">
+
+    <article class="card">
+      <div class="bar-top"></div>
+      <div class="inner">
+        <h3>Gatehouse â€” operational reporting and risk scoring</h3>
+        <p>A multi-role system recording site access and vehicle movements at an industrial distribution site,
+        replacing the paper brief and debrief at the transport desk. Seven role flows, writing one Excel row per
+        movement.</p>
+        <p>The risk model is a weighted assessment: driver basis, route familiarity over 90 days, running height
+        against signed bridge restrictions, prior incidents and delay. Every weight and threshold is written
+        down, so the office can argue with the score rather than just accept it.</p>
+        <p class="proves"><b>Insight:</b> designing a measure people can interrogate, not just a number they
+        receive.</p>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Risk model</span><span class="tag">Excel export</span></div>
+        <a class="repo-link" href="https://github.com/Abdiaziz96/DHLForms" target="_blank" rel="noopener">Repository &rarr;</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="bar-top"></div>
+      <div class="inner">
+        <h3>Career workspace â€” a data pipeline with a quality gate</h3>
+        <p>A claims register holding every fact with its source and verification status, a reconciled timeline,
+        document variants generated from HTML to print-perfect PDF, and a deterministic check that runs on every
+        output before it goes anywhere.</p>
+        <p>The check tests structure, contrast, accessibility and weight, and fails the build if any of it
+        regresses. Nothing ships unvalidated.</p>
+        <p class="proves"><b>Insight:</b> automated validation instead of a manual review, which is the same
+        discipline as checking a dataset before it reaches a report.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">HTML/CSS</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="bar-top"></div>
+      <div class="inner">
+        <h3>Lung histopathology triage â€” end-to-end pipeline</h3>
+        <p>A full path from raw sample data to a reviewable decision: dataset pipeline, triage model, backend API
+        and a dashboard built for a reviewer who is not a data scientist.</p>
+        <p>Built to prove the whole chain rather than the model: ingestion, validation, sampling, inference,
+        storage and presentation, each with its own module.</p>
+        <p class="proves"><b>Insight:</b> raw data in, validated output out, presented to someone whose job is to
+        decide from it.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">API</span><span class="tag">Dashboard</span><span class="tag">TypeScript</span></div>
+        <a class="repo-link" href="https://github.com/Abdiaziz96/LungCancer" target="_blank" rel="noopener">Repository &rarr;</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="bar-top"></div>
+      <div class="inner">
+        <h3>ReadAlong â€” live data capture</h3>
+        <p>Students mark where they lose the thread during a lesson and the teacher sees it while the lesson is
+        still running, rather than in a survey a week later.</p>
+        <p>At its core it is a capture-design problem: what is the smallest signal someone will actually give you
+        in the moment, and what does it mean when thirty arrive at once.</p>
+        <p class="proves"><b>Insight:</b> deciding what to record, and at what granularity, before designing
+        anything that reports on it.</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">PWA</span><span class="tag">Gemini API</span></div>
+        <a class="repo-link" href="https://github.com/Abdiaziz96/ReadAlong" target="_blank" rel="noopener">Repository &rarr;</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="bar-top"></div>
+      <div class="inner">
+        <h3>Agentic AI environment â€” measurement and cost control</h3>
+        <p>A locally-configured agentic AI environment rather than a subscription. Four models routed through
+        OpenRouter, each declared with its real context window and output limit. Two MCP tool servers, a shell
+        guard plugin written in JavaScript, and a prompt patch layer.</p>
+        <p>Routing is decided task by task, with cost controls so running four providers stays affordable. It is
+        a cost model as much as a tooling decision.</p>
+        <p class="proves"><b>Insight:</b> choosing the cheapest option that does the job, and knowing which one
+        that is.</p>
+        <div class="tags"><span class="tag">OpenRouter</span><span class="tag">MCP</span><span class="tag">Node.js</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="bar-top"></div>
+      <div class="inner">
+        <h3>Client delivery â€” two small commercial builds</h3>
+        <p>Websites delivered for a plumbing business and a takeaway, both taken from brief to launch and handed
+        over with the client able to update them without coming back for changes.</p>
+        <p class="proves"><b>Insight:</b> agreeing the boundary of the work, then delivering handover rather than
+        a dependency.</p>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">Responsive</span><span class="tag">Handover</span></div>
+        <a class="repo-link" href="https://github.com/Abdiaziz96" target="_blank" rel="noopener">All repositories &rarr;</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="cv">
+  <h2>Download</h2>
+  <div class="dl">
+    <a href="Abdirahman-Abdiaziz-CV.pdf" download>
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM13 9V3.5L18.5 9z"/></svg></span>
+      <span>
+        <b>CV â€” Data &amp; Insights Analyst</b>
+        <span class="sub">PDF, two pages</span>
+      </span>
+    </a>
+    <a href="Abdirahman-Abdiaziz-Cover-Letter.pdf" download>
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM13 9V3.5L18.5 9z"/></svg></span>
+      <span>
+        <b>Cover letter</b>
+        <span class="sub">PDF, one page</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<footer id="contact">
+  <h2>Contact</h2>
+  <p>Data and insight analyst. SQL, Tableau and operational performance reporting. Bristol based, remote first,
+  and happy to travel.</p>
+  <div class="fbtns">
+    <a class="fbtn solid" href="mailto:abdiaziz141024@gmail.com">abdiaziz141024@gmail.com</a>
+    <a class="fbtn" href="tel:+447576749072">+44 7576 749072</a>
+    <a class="fbtn" href="https://github.com/Abdiaziz96" target="_blank" rel="noopener">github.com/Abdiaziz96</a>
+  </div>
+  <p class="copy">Abdirahman Abdiaziz &middot; Bristol, United Kingdom</p>
+</footer>
+
+<script>
+  // Typewriter. Plain JS so the page stays a single file with no build step.
+  (function () {
+    var phrases = [
+      'Data & Insights Analyst',
+      'SQL, Tableau and reporting',
+      'Operational data, clear decisions',
+      'Two years eight months in BI'
+    ];
+    var el = document.getElementById('tw');
+    var phrase = 0, char = 0, deleting = false;
+    function tick() {
+      var full = phrases[phrase];
+      el.textContent = deleting ? full.slice(0, char--) : full.slice(0, char++);
+      var delay = deleting ? 28 : 55;
+      if (!deleting && char > full.length) { deleting = true; delay = 1600; }
+      else if (deleting && char < 0) { deleting = false; phrase = (phrase + 1) % phrases.length; char = 0; delay = 320; }
+      setTimeout(tick, delay);
+    }
+    setTimeout(tick, 900);
+  })();
+</script>
+
+</body>
+</html>
+
