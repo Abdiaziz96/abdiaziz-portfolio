@@ -11,7 +11,8 @@ Single static page. No build step, no dependencies, no framework — `index.html
 Once GitHub Pages is enabled on `main` / root:
 
 ```
-(https://abdiaziz96.github.io/abdiaziz-portfolio/)```
+(https://abdiaziz96.github.io/abdiaziz-portfolio/)
+```
 
 ## What's here
 
